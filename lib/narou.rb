@@ -44,7 +44,7 @@ module Narou
     @@is_web = false
 
     def last_commit_year
-      2024
+      Time.now.year
     end
 
     def root_dir

@@ -46,7 +46,7 @@ module Helper
   def engine_jruby?
     @@engine_is_jruby ||= RUBY_ENGINE == "jruby"
   end
-  
+
   if engine_jruby? && os_windows?
     require_relative "extensions/windows"
     def $stdin.getch
@@ -376,6 +376,7 @@ module Helper
   def erb_copy(src, dst, _binding)
     data = File.read(src, mode: "r:BOM|UTF-8")
     result = ERB.new(data, trim_mode: "-").result(_binding)
+    Pathname(dst).dirname.mkpath
     File.write(dst, result)
   end
 
