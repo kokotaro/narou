@@ -36,6 +36,7 @@ Gem::Specification.new do |gem|
 -----------------
 #### 修正内容
 - 小説家になろうの目次修正に対応 #432 @etg-lt
+- CSS処理に対応 #439
 
 #{"*" * 60}
   EOS
@@ -75,4 +76,3 @@ Gem::Specification.new do |gem|
   gem.add_development_dependency 'awesome_print', '~> 1.8'
   gem.add_development_dependency 'simplecov', '~> 0.20'
 end
-
