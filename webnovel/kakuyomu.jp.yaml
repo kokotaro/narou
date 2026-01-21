@@ -1,6 +1,6 @@
 # ------------------------------------------------------------
 # 小説サイト定義
-name: &name カクヨム
+name: &name kakuyomu
 scheme: https
 domain: kakuyomu.jp
 top_url: \\k<scheme>://\\k<domain>
@@ -10,6 +10,7 @@ confirm_over18: no
 append_title_to_folder_name: yes
 title_strip_pattern: null
 sitename: *name
+display_name: カクヨム
 version: 2.0
 
 # ------------------------------------------------------------

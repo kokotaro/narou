@@ -487,7 +487,7 @@ class Narou::AppServer < Sinatra::Base
           last_update: data["last_update"].to_i,
           title: escape_html(data["title"]),
           author: escape_html(data["author"]),
-          sitename: data["sitename"],
+          sitename: data["display_sitename"] || data["sitename"],
           toc_url: data["toc_url"],
           novel_type: data["novel_type"] == 2 ? "短編" : "連載",
           tags: if tags.empty?

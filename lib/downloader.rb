@@ -25,7 +25,7 @@ class Downloader
   include Narou::Eventable
   extend Memoist
 
-  SECTION_SAVE_DIR_NAME = "本文"    # 本文を保存するディレクトリ名
+  SECTION_SAVE_DIR_NAME = "sections"    # 本文を保存するディレクトリ名
   CACHE_SAVE_DIR_NAME = "cache"   # 差分用キャッシュ保存用ディレクトリ名
   RAW_DATA_DIR_NAME = "raw"    # 本文の生データを保存するディレクトリ名
   TOC_FILE_NAME = "toc.yaml"
@@ -616,6 +616,7 @@ class Downloader
       "file_title" => get_file_title,
       "toc_url" => @setting["toc_url"],
       "sitename" => sitename,
+      "display_sitename" => @setting["display_name"] || sitename,
       "novel_type" => get_novel_type,
       "end" => novel_end?,
       "last_update" => Time.now,

@@ -1,6 +1,6 @@
 # ------------------------------------------------------------
 # 小説サイト定義
-name: &name 暁
+name: &name akatsuki
 domain: www.akatsuki-novels.com
 top_url: https://\\k<domain>
 url: https?://\\k<domain>/stories/index/novel_id\~(?<ncode>\d+)
@@ -10,6 +10,7 @@ append_title_to_folder_name: yes
 title_strip_pattern: null
 cookie: CakeCookie[ALLOWED_ADULT_NOVEL]=on
 sitename: *name
+display_name: 暁
 version: 1.0
 
 # ------------------------------------------------------------

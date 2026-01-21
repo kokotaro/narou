@@ -1,17 +1,21 @@
 # ------------------------------------------------------------
 # 小説サイト定義
-name: &name ncode
-domain: ncode.syosetu.com
+name: 小説家になろうR18
+domain: novel18.syosetu.com
 top_url: https://\\k<domain>
 url: https?://\\k<domain>/(?<ncode>n\d+[a-z]+)
 encoding: UTF-8
-confirm_over18: no
+confirm_over18: yes
 append_title_to_folder_name: yes
 title_strip_pattern: null
 cookie: over18=yes
-sitename: *name
-display_name: 小説家になろう
-version: 2.2
+
+# 掲載サイト名は動的に取得する
+sitename: |-
+  <dt class="p-infotop-data__title">掲載サイト</dt>
+  <dd class="p-infotop-data__value">(?<sitename>.+?)\(.+\)</dd>
+
+version: 2.1
 
 # ------------------------------------------------------------
 # 目次取得設定
@@ -55,7 +59,7 @@ illust_grep_pattern: null
 # ------------------------------------------------------------
 # 特殊な設定
 is_narou: true
-narou_api_url: https://api.syosetu.com/novelapi/api/
+narou_api_url: https://api.syosetu.com/novel18api/api/
 
 # ------------------------------------------------------------
 # 小説情報からパースするための設定
@@ -86,15 +90,15 @@ gf: |-
 
 # novelupdated_at 小説の更新時刻。連載小説だと書いてないので最終掲載日で代用
 nu: |-
-  <th>(?:最終更新日|最新掲載日|最終掲載日)</th>
-  <td>(?:
+  <dt class="p-infotop-data__title">(?:最終更新日|最新掲載日|最終掲載日)</dt>
+  <dd class="p-infotop-data__value">(?:
   )?(?<novelupdated_at>.+?)(?:
-  )?</td>
+  )?</dd>
 
 # general_lastup 最終掲載日
 gl: |-
-  <th>(?:最新掲載日|最終掲載日)</th>
-  <td>(?<general_lastup>.+?)</td>
+  <dt class="p-infotop-data__title">(?:最新掲載日|最終掲載日)</dt>
+  <dd class="p-infotop-data__value">(?<general_lastup>.+?)</dd>
 
 # writer 作者名
 w: |-

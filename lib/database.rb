@@ -16,7 +16,7 @@ class Database
   include Enumerable
   extend Forwardable
 
-  ARCHIVE_ROOT_DIR_PATH = "小説データ/"
+  ARCHIVE_ROOT_DIR_PATH = "novels/"
   DATABASE_NAME = "database"
 
   def_delegators :@database, :[], :[]=, :each, :each_key, :each_value, :delete
