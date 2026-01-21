@@ -1,6 +1,6 @@
 # ------------------------------------------------------------
 # 小説サイト定義
-name: &name 小説家になろう
+name: &name ncode
 domain: ncode.syosetu.com
 top_url: https://\\k<domain>
 url: https?://\\k<domain>/(?<ncode>n\d+[a-z]+)
@@ -10,6 +10,7 @@ append_title_to_folder_name: yes
 title_strip_pattern: null
 cookie: over18=yes
 sitename: *name
+display_name: 小説家になろう
 version: 2.2
 
 # ------------------------------------------------------------
