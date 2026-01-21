@@ -29,7 +29,7 @@ class SiteSetting
       Dir.glob(load_paths) do |path|
         setting = SiteSetting.load_file(path)
         name = setting["name"]
-        @narou ||= setting if name == "小説家になろう"
+        @narou ||= setting if name == "ncode"
         origin = result[name]
         origin&.merge(setting)
         result[name] ||= setting
